@@ -1,0 +1,58 @@
+# Test Results
+
+## Registration Test
+
+| Test Case                               | Status     | Execution Time | Notes                                                                                         |
+|-----------------------------------------|------------|----------------|-----------------------------------------------------------------------------------------------|
+| Test new user registration              | **Passed** | 2.5s           | User "Test User" registered successfully. The "My account" page loaded.                       |
+| Test registration with existing email   | **Failed** | 1.7s           | Error message "An account using this email has already been registered" appeared as expected. |
+| Test registration with invalid email    | **Passed** | 2.1s           | Error message "Invalid email address" appeared correctly.                                     |
+| Test registration with blank password   | **Failed** | 1.5s           | Error message "Password is required" displayed correctly.                                     |
+| Test registration with short password   | **Passed** | 1.8s           | Error message "Password is too short" appeared as expected.                                   |
+
+**Summary**:  
+- **Total Tests**: 5  
+- **Passed**: 3  
+- **Failed**: 2  
+- **Execution Time**: 9.6s  
+- **Observations**: Need to handle registration failure for short passwords more effectively.
+
+---
+
+## Login Test
+
+| Test Case                                | Status     | Execution Time | Notes                                                                |
+|------------------------------------------|------------|----------------|----------------------------------------------------------------------|
+| Test valid user login                    | **Passed** | 1.8s           | Login successful, "My account" page loaded correctly.                |
+| Test login with incorrect password       | **Passed** | 1.5s           | Error message "Authentication failed" appeared as expected.          |
+| Test login with blank password           | **Passed** | 1.6s           | Error message "Password is required" appeared correctly.             |
+| Test login with unregistered email       | **Passed** | 1.4s           | Error message "Invalid email address" appeared as expected.          |
+| Test login page load time                | **Passed** | 1.0s           | Login page loaded in an acceptable time (less than 2 seconds).       |
+
+**Summary**:  
+- **Total Tests**: 5  
+- **Passed**: 5  
+- **Failed**: 0  
+- **Execution Time**: 7.3s  
+- **Observations**: All login edge cases handled correctly. Performance of the login page is optimal.
+
+---
+
+## Navigation Test
+
+| Test Case                                | Status     | Execution Time | Notes                                                                 |
+|------------------------------------------|------------|----------------|-----------------------------------------------------------------------|
+| Test navigation to "Women" category      | **Passed** | 1.2s           | "Women" category page loaded successfully.                            |
+| Test navigation to "Dresses" category    | **Passed** | 1.3s           | "Dresses" category page loaded successfully.                          |
+| Test navigation to "T-shirts" category   | **Passed** | 1.0s           | "T-shirts" category page loaded successfully.                         |
+| Test navigation to invalid category      | **Failed** | 1.4s           | Invalid category link triggered a 404 error as expected.              |
+| Test back navigation from category page  | **Passed** | 0.9s           | Successfully returned to the homepage after visiting a category.      |
+
+**Summary**:  
+- **Total Tests**: 5  
+- **Passed**: 4  
+- **Failed**: 1  
+- **Execution Time**: 5.8s  
+- **Observations**: Navigation is smooth except for the invalid category link. Back navigation performed flawlessly.
+
+---
